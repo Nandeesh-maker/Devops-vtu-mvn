@@ -3,106 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>DevOps VTU - Maven Project</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <header>
     <div class="header-content">
         <img src="logo.png" alt="DevOps Logo" class="logo">
-
         <div>
             <h1>DevOps VTU</h1>
-            <p>Maven Project – BCSL657D</p>
+            <p>BCSL657D | Maven Project</p>
         </div>
     </div>
 </header>
 
 <nav>
-    <a href="#home">Home</a>
-    <a href="#maven">Maven</a>
-    <a href="#pom">POM File</a>
-    <a href="#dependencies">Dependencies</a>
-    <a href="#plugins">Plugins</a>
+    <a href="#">Home</a>
+    <a href="#">Maven</a>
+    <a href="#">POM</a>
+    <a href="#">Dependencies</a>
+    <a href="#">Plugins</a>
 </nav>
 
-<main>
+<section class="hero">
+    <h2>Working with Maven Project</h2>
+    <p>
+        This website demonstrates Maven Project Structure, POM File,
+        Dependencies, Plugins, and the Maven Build Lifecycle.
+    </p>
+    <button>Explore Maven</button>
+</section>
 
-    <section id="home" class="hero">
-        <h2>Working with Maven</h2>
+<section class="container">
+    <h2>Key Concepts</h2>
 
-        <p>
-            This project demonstrates Maven project structure,
-            POM configuration, dependencies, plugins and build lifecycle.
-        </p>
+    <div class="cards">
 
-        <button>Learn Maven</button>
-    </section>
-
-    <section class="container">
-
-        <h2>DevOps VTU Experiment 2</h2>
-
-        <div class="cards">
-
-            <div class="card" id="maven">
-                <h3>Maven</h3>
-                <p>
-                    Maven is a build automation and project management
-                    tool used to build, test and package Java applications.
-                </p>
-            </div>
-
-            <div class="card" id="pom">
-                <h3>POM File</h3>
-                <p>
-                    The pom.xml file contains project information,
-                    dependencies, plugins and build configuration.
-                </p>
-            </div>
-
-            <div class="card" id="dependencies">
-                <h3>Dependencies</h3>
-                <p>
-                    Dependencies provide external libraries required
-                    by the application.
-                </p>
-            </div>
-
-            <div class="card" id="plugins">
-                <h3>Plugins</h3>
-                <p>
-                    Maven plugins perform tasks such as compiling,
-                    testing and packaging the project.
-                </p>
-            </div>
-
+        <div class="card">
+            <h3>Maven</h3>
+            <p>
+                Maven automates building, testing, packaging,
+                and managing Java projects.
+            </p>
         </div>
 
-    </section>
-
-    <section class="lifecycle">
-
-        <h2>Maven Build Lifecycle</h2>
-
-        <div class="steps">
-            <span>Clean</span>
-            <span>Compile</span>
-            <span>Test</span>
-            <span>Package</span>
-            <span>Install</span>
+        <div class="card">
+            <h3>POM File</h3>
+            <p>
+                pom.xml stores project information,
+                dependencies, plugins, and build configuration.
+            </p>
         </div>
 
-    </section>
+        <div class="card">
+            <h3>Dependencies</h3>
+            <p>
+                Dependencies provide external libraries
+                required by the application.
+            </p>
+        </div>
 
-</main>
+        <div class="card">
+            <h3>Plugins</h3>
+            <p>
+                Plugins perform tasks such as compile,
+                test, package, and install.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section class="lifecycle">
+    <h2>Maven Build Lifecycle</h2>
+
+    <div class="steps">
+        <span>Clean</span>
+        <span>Compile</span>
+        <span>Test</span>
+        <span>Package</span>
+        <span>Install</span>
+    </div>
+</section>
 
 <footer>
-    <p>BCSL657D | DevOps Laboratory | Maven Experiment 2</p>
+    <p>DevOps Laboratory | VTU | BCSL657D</p>
 </footer>
 
 </body>
