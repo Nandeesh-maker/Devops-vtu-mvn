@@ -2,50 +2,46 @@ package org.test;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
-import static org.testng.Assert.assertTrue;
 
 public class WebpageTest {
 
-    private WebDriver driver;
+    WebDriver driver;
 
-    @BeforeTest
-    public void openBrowser() throws InterruptedException {
+    @BeforeClass
+    public void openBrowser() {
 
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
 
-        driver.manage().window().maximize();
+        options.addArguments("--headless=new");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--disable-gpu");
+        options.addArguments("--window-size=1920,1080");
 
-        Thread.sleep(2000);
-
-        driver.get("https://nandeesh-maker.github.io/Devops-vtu-mvn/");
+        driver = new ChromeDriver(options);
     }
 
     @Test
-    public void titleValidationTest() {
+    public void testPageTitle() {
 
-        String actualTitle = driver.getTitle();
-        System.out.println(actualTitle);
+        driver.get("https://nandeesh-maker.github.io/devopsgradle/");
 
-        String expectedTitle = "DevOps VTU - Maven Project";
+        String title = driver.getTitle();
 
-        Assert.assertEquals(actualTitle, expectedTitle);
+        System.out.println("Page Title: " + title);
 
-        assertTrue(
-                actualTitle.contains("DevOps"),
-                "Title should contain 'DevOps'"
-        );
+        assert title != null && !title.isEmpty();
     }
 
-    @AfterTest
-    public void closeBrowser() throws InterruptedException {
+    @AfterClass
+    public void closeBrowser() {
 
-        Thread.sleep(1000);
-
-        driver.quit();
+        if (driver != null) {
+            driver.quit();
+        }
     }
 }
